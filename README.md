@@ -6,10 +6,7 @@
 
 This repository is an [Andera](https://andera.top) Worker built to allow screenshots to be taken with the help of Chrome, using [Playwright](https://playwright.dev). The Worker creates 10 slots and opens 10 Chrome tabs, assigning requests to each tab and resetting them once the screenshot has been taken.
 
-**Andera** is a high-performance, open-source Task Orchestration Platform (TOP) designed for simplicity, flexibility, and scalability.  
-It enables you to build, run, and manage distributed workers for any kind of task, from AI agents to automation scripts.
-
-> **Note:** This repository is a template. You should customize this README and the codebase for your own worker project.
+**Andera** is a high-performance, open-source Task Orchestration Platform (TOP) designed for simplicity, flexibility, and scalability. It enables you to build, run, and manage distributed workers for any kind of task, from AI agents to automation scripts.
 
 ---
 
@@ -122,8 +119,6 @@ curl -X POST http://localhost:3000/task \
     "mode": "sync"
   }'
 ```
-
-The `input.returnType` can accept binary or base64.
 
 ---
 

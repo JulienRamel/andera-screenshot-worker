@@ -51,30 +51,36 @@ Edit `.env` to set your keys and configuration.
 
 ## Usage
 
-### Run in Development
+### Manual setup
+
+#### Run the application
 
 ```sh
 npm run dev
 ```
 
-### Build & Run in Production
+#### Build & Run in Production
 
 ```sh
 npm run build
 npm start
 ```
 
-### Run with Docker
+### Docker setup
 
-You should use Docker Compose to run the Base Worker for a robust and production-ready setup.
+#### Create a Docker network for Andera
 
-### Build the Docker image
+```sh
+docker network create andera-net
+```
+
+#### Build the Docker image
 
 ```sh
 docker-compose build
 ```
 
-### Run the stack
+#### Run the stack
 
 ```sh
 docker-compose up

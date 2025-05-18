@@ -23,6 +23,12 @@ services:
       - OPENAPI_ENABLED=${OPENAPI_ENABLED}
     ports:
       - "${PORT}:${PORT}"
+    networks:
+      - andera-net
     command: node dist/app.js
     volumes:
       - ./workers.json:/app/workers.json
+
+networks:
+  andera-net:
+    external: true

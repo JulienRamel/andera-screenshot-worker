@@ -2,7 +2,7 @@ import { config as coreConfig } from '@andera-top/worker-core/dist/config'
 
 interface BaseWorkerConfig {
   baseWorkerSpecificConfig: {
-    customConfigOption: string
+    allowIgnoreSslErrors: boolean
   }
   port: number
   websocketPort: number
@@ -13,7 +13,7 @@ export type Config = typeof coreConfig & BaseWorkerConfig
 export const config: Config = {
   ...coreConfig,
   baseWorkerSpecificConfig: {
-    customConfigOption: process.env.CUSTOM_CONFIG || 'default-value',
+    allowIgnoreSslErrors: process.env.ALLOW_IGNORE_SSL_ERRORS === 'true',
   },
   port: parseInt(process.env.PORT || '3000', 10),
   websocketPort: parseInt(process.env.WEBSOCKET_PORT || '3001', 10),

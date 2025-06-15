@@ -21,14 +21,15 @@ export default defineService({
 
       // Create the context pool (slots)
       for (let i = 0; i < config.worker.slots; i++) {
-        const context = await browser.newContext()
+        const contextOptions = config.baseWorkerSpecificConfig.allowIgnoreSslErrors ? { ignoreHTTPSErrors: true } : {}
+        const context = await browser.newContext(contextOptions)
         contexts.push(context)
         contextStatus.push('free')
         contextBusySince.push(null)
       }
 
       browserVersion = browser.version()
-      log('[PLAYWRIGHT]', `${config.worker.slots} contexts opened and ready`)
+      log('[PLAYWRIGHT]', `${config.worker.slots} contexts opened and ready${config.baseWorkerSpecificConfig.allowIgnoreSslErrors ? ' (SSL errors ignored)' : ''}`)
 
       // Periodically force-release contexts that are stuck as busy for too long
       setInterval(() => {

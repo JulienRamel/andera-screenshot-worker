@@ -151,7 +151,7 @@ curl -X POST http://localhost:3000/task \
     "height": 1080,
     "returnType": "base64",
     "imageMimeType": "image/jpeg",
-    "jpegQuality": 90,
+    "quality": 90,
     "waitForSelector": "#main-content",
     "delay": 1000
   },

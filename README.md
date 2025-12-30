@@ -86,7 +86,7 @@ docker-compose build
 docker-compose up
 ```
 
-This will start the Base Worker with all environment variables from your `.env` file.
+This will start the Screenshot Worker with all environment variables from your `.env` file.
 
 > **Do not use `docker run` directly.** The recommended way is to use `docker-compose up` to ensure all dependencies and configuration are handled correctly.
 

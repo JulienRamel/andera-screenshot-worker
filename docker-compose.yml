@@ -26,8 +26,6 @@ services:
     networks:
       - andera-net
     command: node dist/app.js
-    volumes:
-      - ./workers.json:/app/workers.json
 
 networks:
   andera-net:

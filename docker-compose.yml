@@ -22,7 +22,7 @@ services:
       - WEBHOOK_HEADERS=${WEBHOOK_HEADERS}
       - OPENAPI_ENABLED=${OPENAPI_ENABLED}
     ports:
-      - "${PORT}:${PORT}"
+      - "127.0.0.1:${PORT}:${PORT}"
     networks:
       - andera-net
     command: node dist/app.js

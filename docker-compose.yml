@@ -1,6 +1,7 @@
 services:
   julienramel-andera-screenshot-worker:
     image: julienramel/andera-screenshot-worker
+    restart: unless-stopped
     build:
       context: .
       dockerfile: Dockerfile

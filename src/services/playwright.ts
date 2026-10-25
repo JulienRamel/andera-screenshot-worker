@@ -29,7 +29,10 @@ export default defineService({
       }
 
       browserVersion = browser.version()
-      log('[PLAYWRIGHT]', `${config.worker.slots} contexts opened and ready${config.baseWorkerSpecificConfig.allowIgnoreSslErrors ? ' (SSL errors ignored)' : ''}`)
+      log(
+        '[PLAYWRIGHT]',
+        `${config.worker.slots} contexts opened and ready${config.baseWorkerSpecificConfig.allowIgnoreSslErrors ? ' (SSL errors ignored)' : ''}`
+      )
 
       // Periodically force-release contexts that are stuck as busy for too long
       setInterval(() => {
